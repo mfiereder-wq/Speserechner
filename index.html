@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Spesenrechner</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚗 Spesenrechner</h1>
+            <div class="month-selector">
+                <button id="prevMonth" aria-label="Vorheriger Monat">‹</button>
+                <span id="currentMonth">Juli 2026</span>
+                <button id="nextMonth" aria-label="Nächster Monat">›</button>
+            </div>
+        </header>
+
+        <main>
+            <section class="input-card">
+                <h2>Neuer Eintrag</h2>
+                <div class="input-group">
+                    <label for="dateInput">Datum</label>
+                    <input type="date" id="dateInput">
+                </div>
+                <div class="input-group">
+                    <label for="kmInput">Kilometer</label>
+                    <input type="number" id="kmInput" inputmode="numeric" placeholder="z.B. 24" min="0" step="1">
+                </div>
+                <button id="addBtn" class="btn-primary">Eintrag hinzufügen</button>
+            </section>
+
+            <section class="summary-card">
+                <div class="summary-item">
+                    <span>Gesamt km</span>
+                    <strong id="totalKm">0</strong>
+                </div>
+                <div class="summary-item">
+                    <span>Entschädigung</span>
+                    <strong id="totalAmount">CHF 0.00</strong>
+                </div>
+            </section>
+
+            <section class="entries-section">
+                <h2>Einträge <span id="entryCount" class="badge">0</span></h2>
+                <ul id="entriesList" class="entries-list"></ul>
+                <p id="emptyState" class="empty-state">Keine Einträge für diesen Monat.</p>
+            </section>
+
+            <section class="actions">
+                <button id="exportPdf" class="btn-secondary">📄 PDF Export</button>
+                <button id="clearMonth" class="btn-danger">🗑 Monat löschen</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>Rate: <strong>0.60 CHF/km</strong></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
