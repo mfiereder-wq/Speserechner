@@ -181,7 +181,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: var(--primary);
 }
 
-.badge {
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.input-small { width: 100%; }
+
+.settings-panel.hidden { display: none; }
+.settings-panel {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+}
+.btn-ghost {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 10px;
+    cursor: pointer;
+}
     background: var(--primary);
     color: #fff;
     font-size: 0.75rem;

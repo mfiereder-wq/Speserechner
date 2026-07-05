@@ -24,15 +24,42 @@
         <main>
             <section class="input-card">
                 <h2>Neuer Eintrag</h2>
-                <div class="input-group">
-                    <label for="dateInput">Datum</label>
-                    <input type="date" id="dateInput">
+        <div class="input-group">
+            <label for="dateInput">Datum</label>
+            <input type="date" id="dateInput">
+        </div>
+        <div class="input-row">
+            <div class="input-group">
+                <label for="fromInput">Von</label>
+                <input type="text" id="fromInput" placeholder="z.B. Dietikon" autocomplete="off">
+            </div>
+            <div class="input-group">
+                <label for="toInput">Nach</label>
+                <input type="text" id="toInput" placeholder="z.B. Zürich Wiedikon" autocomplete="off">
+            </div>
+        </div>
+        <div class="input-group">
+            <label for="kmInput">Kilometer</label>
+            <input type="number" id="kmInput" inputmode="numeric" placeholder="z.B. 24" min="0" step="1">
+        </div>
+        <button id="addBtn" class="btn-primary">Eintrag hinzufügen</button>
+        <button id="settingsToggle" class="btn-ghost" type="button">⚙️ Einstellungen</button>
+        <div id="settingsPanel" class="settings-panel hidden">
+            <div class="input-group">
+                <label for="employeeInput">Dein Name (Promoter)</label>
+                <input type="text" id="employeeInput" placeholder="Max Mustermann">
+            </div>
+            <div class="input-group">
+                <label>Firmenadresse</label>
+                <input type="text" id="companyLine1" placeholder="Firma GmbH">
+                <input type="text" id="companyLine2" placeholder="Musterstrasse 12" class="input-small">
+                <div class="input-row">
+                    <input type="text" id="companyZip" placeholder="PLZ" class="input-small">
+                    <input type="text" id="companyCity" placeholder="Ort" class="input-small">
                 </div>
-                <div class="input-group">
-                    <label for="kmInput">Kilometer</label>
-                    <input type="number" id="kmInput" inputmode="numeric" placeholder="z.B. 24" min="0" step="1">
-                </div>
-                <button id="addBtn" class="btn-primary">Eintrag hinzufügen</button>
+            </div>
+            <button id="saveSettings" class="btn-secondary">Einstellungen speichern</button>
+        </div>
             </section>
 
             <section class="summary-card">
